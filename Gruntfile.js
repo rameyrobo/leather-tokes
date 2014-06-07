@@ -1,4 +1,4 @@
-// Generated on 2014-06-06 using generator-bootstrap-less 3.2.0
+// Generated on 2014-05-29 using generator-bootstrap-less 3.2.0
 'use strict';
 
 // # Globbing
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost',
+        hostname: '*',
         livereload: 35729
       },
       livereload: {
@@ -260,8 +260,39 @@ module.exports = function (grunt) {
         'svgmin',
         'htmlmin'
       ]
+    },
+    // Configuration to be run (and then tested).
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+      },
+      testbranch: {
+        options: {
+          branch: 'test-branch',
+          remote: '../',
+          commit: true,
+          push: true,
+          connectCommits: false,
+          tag: false
+        }
+      },
+      production: {
+        options: {
+          branch: 'gh-pages',
+          remote: 'git@github.com:rameyrobo/leather-tokes.git',
+          commit: true,
+          message: 'Check *this* out.',
+          push: true
+        }
+      }
+    },
+
+    // Unit tests.
+    nodeunit: {
+      tests: ['test/*_test.js'],
     }
-  });
+  }
+  );
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -303,6 +334,7 @@ module.exports = function (grunt) {
     'copy',
     'rev',
     'usemin'
+
   ]);
 
   grunt.registerTask('default', [
