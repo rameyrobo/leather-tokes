@@ -24,7 +24,12 @@
     "load-grunt-tasks": "~0.2.0",
     "matchdep": "~0.1.2",
     "time-grunt": "~0.1.1",
+<<<<<<< HEAD
     "jshint-stylish": "~0.1.3"
+=======
+    "jshint-stylish": "~0.1.3",
+    "grunt-build-control": "^0.1.3"
+>>>>>>> 6649708
   },
   "engines": {
     "node": ">=0.8.0"
