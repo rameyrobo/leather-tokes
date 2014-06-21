@@ -1,4 +1,4 @@
-// Generated on 2014-05-29 using generator-bootstrap-less 3.2.0
+// Generated on 2014-06-16 using generator-bootstrap-less 3.2.0
 'use strict';
 
 // # Globbing
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // change this to '0.0.0.0' to access the server from outside
-        hostname: '*',
+        hostname: 'localhost',
         livereload: 35729
       },
       livereload: {
@@ -216,7 +216,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: '*.html',
+          src: '**/*.html',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -230,7 +230,6 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
-            'fonts/{,*/}*.*',
             '.htaccess',
             'images/{,*/}*.{webp,gif}'
           ]
@@ -238,11 +237,6 @@ module.exports = function (grunt) {
       },
       server: {
         files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/bower_components/font-awesome/fonts/',
-          dest: '<%= yeoman.app %>/fonts/font-awesome',
-          src: ['*']
         }, {
           expand: true,
           dot: true,
@@ -260,39 +254,8 @@ module.exports = function (grunt) {
         'svgmin',
         'htmlmin'
       ]
-    },
-    // Configuration to be run (and then tested).
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-      },
-      testbranch: {
-        options: {
-          branch: 'test-branch',
-          remote: '../',
-          commit: true,
-          push: true,
-          connectCommits: false,
-          tag: false
-        }
-      },
-      production: {
-        options: {
-          branch: 'gh-pages',
-          remote: 'git@github.com:rameyrobo/leather-tokes.git',
-          commit: true,
-          message: '*',
-          push: true
-        }
-      }
-    },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js'],
     }
-  }
-  );
+  });
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -334,7 +297,6 @@ module.exports = function (grunt) {
     'copy',
     'rev',
     'usemin'
-
   ]);
 
   grunt.registerTask('default', [

@@ -25,4 +25,5 @@ node_modules
 dist
 .tmp
 app/bower_components
-test/bower_components/mocha/media/
+
+test/bower_components/mocha/media/logo.svg
