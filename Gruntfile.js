@@ -251,8 +251,8 @@ module.exports = function (grunt) {
         'coffee',
         'less',
         'imagemin',
-        'svgmin',
-        'htmlmin'
+        'svgmin'
+        //'htmlmin'
       ]
     }
   });
